@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "react-puppeteer": "^1.0.0-rc.7",
-    "yunzai": "^1.0.0-rc.2"
+    "yunzai": "^1.0.0-rc.4"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",

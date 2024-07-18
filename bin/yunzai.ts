@@ -37,6 +37,17 @@ shamefully-hoist=true
 # 严格的对等依赖关系
 strict-peer-dependencies=false`
 
+const GitBody = `
+node_modules
+/config
+/data
+/logs
+yarn.lock
+/resources
+/renderers
+/plugins
+`
+
 async function createyunzai({ name, force, cancel }: options) {
   // 名字不存在
   if (!name) process.exit()
@@ -61,6 +72,7 @@ async function createyunzai({ name, force, cancel }: options) {
     cpSync(templatePath, dirPath, { recursive: true })
 
     writeFileSync(join(dirPath, '.npmrc'), NpmrcBody)
+    writeFileSync(join(dirPath, '.gitignore'), GitBody)
 
     // 切换目录
     process.chdir(dirPath)
