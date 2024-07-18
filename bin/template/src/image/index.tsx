@@ -1,7 +1,7 @@
 import React from 'react'
 import { dirname } from 'path'
-import { Picture } from 'yunzai'
-import Hello, { PropsType } from './conponent/help'
+import { Picture } from 'react-puppeteer'
+import Hello from './conponent/help'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 
@@ -11,7 +11,7 @@ export const paths = {
   '@yunzai': dirname(require('../../README.md'))
 }
 
-export class Image extends Picture {
+export class ScreenshotPicture extends Picture {
   constructor() {
     // 继承实例
     super()
@@ -24,21 +24,24 @@ export class Image extends Picture {
    * @param Props
    * @returns
    */
-  createHelp(Props: PropsType) {
-    // 生成 html 地址 或 html字符串
-    const Address = this.Com.create(<Hello {...Props} />, {
+  createHelp(Props: Parameters<typeof Hello>[0]) {
+    return this.screenshot({
       // html/help/help.html
       join_dir: 'help',
       html_name: `help.html`,
-      // 插入
-      html_head: this.Com.render(
-        <link href={require('../../public/css/help.css')} />
+      // <head> </head>
+      html_head: (
+        <>
+          <link href={require('../../public/output.css')} />
+          <link href={require('../../public/css/help.css')} />
+        </>
       ),
+      // <body> </body>
+      html_body: <Hello {...Props} />,
       // 设置别名
       file_paths: paths
     })
-    return this.Pup.render(Address)
   }
 }
 // 初始化 图片生成对象
-export const imgae = new Image()
+export const Screenshot = new ScreenshotPicture()

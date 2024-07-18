@@ -73,7 +73,7 @@ async function createyunzai({ name, force, cancel }: options) {
     }
 
     // execSync('git init', { stdio: 'inherit' })
- 
+
     console.info(`------------------------------------`)
     console.info(`cd ${name}       #进入机器人目录`)
 
