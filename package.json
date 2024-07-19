@@ -1,6 +1,6 @@
 {
   "name": "create-yunzai",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.4",
   "description": "yunzai",
   "author": "ningmengchongshui",
   "main": "bin/index.js",
@@ -20,9 +20,7 @@
     "husky": "^9.0.11"
   },
   "files": [
-    "bin/template/.npmrc",
     "bin/template",
-    "bin/cache",
     "bin/yunzai.js"
   ],
   "bin": {

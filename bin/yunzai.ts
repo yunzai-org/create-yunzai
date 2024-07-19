@@ -42,10 +42,13 @@ node_modules
 /config
 /data
 /logs
-yarn.lock
 /resources
 /renderers
 /plugins
+/index.js
+/types
+/public
+yarn.lock
 `
 
 async function createyunzai({ name, force, cancel }: options) {

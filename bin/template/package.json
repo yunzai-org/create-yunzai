@@ -6,19 +6,23 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "app": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.ts",
-    "dev": "nodemon",
+    "app": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js",
+    "dev": "npm run css && nodemon",
+    "img": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/server.ts",
+    "build": "npm run css && rollup  --config rollup.config.js",
     "css": "tailwindcss -i ./src/input.css -o ./public/output.css",
     "css:watch": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@types/react": "^18.3.3",
     "react-puppeteer": "^1.0.0-rc.7",
-    "yunzai": "^1.0.0-rc.4"
+    "yunzai": "^1.0.0-rc.6"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.3",
+    "@types/lodash": "^4.17.7",
     "nodemon": "^3.0.1",
     "prettier": "^3.2.5",
     "rollup": "^4.16.4",

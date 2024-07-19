@@ -1,7 +1,7 @@
 import React from 'react'
 import { dirname } from 'path'
 import { Picture } from 'react-puppeteer'
-import Hello from './conponent/help'
+import Image from './views/image'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 
@@ -24,7 +24,7 @@ export class ScreenshotPicture extends Picture {
    * @param Props
    * @returns
    */
-  createHelp(Props: Parameters<typeof Hello>[0]) {
+  createHelp(Props: Parameters<typeof Image>[0]) {
     return this.screenshot({
       // html/help/help.html
       join_dir: 'help',
@@ -33,11 +33,11 @@ export class ScreenshotPicture extends Picture {
       html_head: (
         <>
           <link href={require('../../public/output.css')} />
-          <link href={require('../../public/css/help.css')} />
+          <link href={require('../assets/css/example.main.css')} />
         </>
       ),
       // <body> </body>
-      html_body: <Hello {...Props} />,
+      html_body: <Image {...Props} />,
       // 设置别名
       file_paths: paths
     })
