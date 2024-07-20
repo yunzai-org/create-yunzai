@@ -1,6 +1,6 @@
-import { applicationOptions } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzai'
 import * as apps from './apps/index'
-const Data = []
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     create() {

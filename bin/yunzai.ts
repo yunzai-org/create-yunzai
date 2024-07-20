@@ -48,6 +48,7 @@ node_modules
 /index.js
 /types
 /public
+/temp
 yarn.lock
 `
 

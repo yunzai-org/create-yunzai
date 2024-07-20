@@ -1,31 +1,19 @@
-import { Plugin } from 'yunzai'
-export class outNotice extends Plugin {
-  tips = '退群了'
-  constructor() {
-    /**
-            name: '退群通知',
-            dsc: 'xx退群了',
-         */
-    super()
-    this.event = 'notice.group.decrease'
+import { Messages } from 'yunzai'
+const message = new Messages('notice.group.decrease')
+const tips = '退群了'
+message.use(async e => {
+  if (e.user_id == e.bot.uin) return
+  let name = null,
+    msg = null
+  if (e.member) {
+    name = e.member.card || e.member.nickname
   }
-  /**
-   *
-   * @returns
-   */
-  async accept() {
-    if (this.e.user_id == this.e.bot.uin) return
-    let name = null,
-      msg = null
-    if (this.e.member) {
-      name = this.e.member.card || this.e.member.nickname
-    }
-    if (name) {
-      msg = `${name}(${this.e.user_id}) ${this.tips}`
-    } else {
-      msg = `${this.e.user_id} ${this.tips}`
-    }
-    logger.mark(`[退出通知]${this.e.logText} ${msg}`)
-    await this.reply(msg)
+  if (name) {
+    msg = `${name}(${e.user_id}) ${tips}`
+  } else {
+    msg = `${e.user_id} ${tips}`
   }
-}
+  logger.mark(`[退出通知]${e.logText} ${msg}`)
+  await e.reply(msg)
+})
+export const outNotice = message.ok
