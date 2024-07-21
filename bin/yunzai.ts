@@ -49,6 +49,7 @@ node_modules
 /types
 /public
 /temp
+/lib
 yarn.lock
 `
 

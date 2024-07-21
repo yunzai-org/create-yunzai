@@ -9,8 +9,9 @@
     "app": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js",
     "dev": "npm run css && nodemon",
     "img": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/server.ts",
-    "build": "npm run css && rollup  --config rollup.config.js",
+    "build": "npm run css:m && rollup  --config rollup.config.js",
     "css": "tailwindcss -i ./src/input.css -o ./public/output.css",
+    "css:m": "tailwindcss -i ./src/input.css -o ./public/output.css -m",
     "css:watch": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
     "format": "prettier --write ."
   },
@@ -31,14 +32,15 @@
     "typescript": "^5.5.3"
   },
   "files": [
-    "index.js",
-    "types"
+    "public",
+    "assets",
+    "lib"
   ],
-  "types": "types",
+  "types": "lib/types",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "types": "./types/index.d.ts"
+      "import": "./lib/index.js",
+      "types": "./lib/types/index.d.ts"
     }
   },
   "keywords": [

@@ -1,25 +1,29 @@
 import typescript from '@rollup/plugin-typescript'
-// import { terser } from '@rollup/plugin-terser'
+import terser from '@rollup/plugin-terser'
 /**
  * @type {import("rollup").RollupOptions[]}
  */
 export default [
   {
+    // src 目录
     input: './src/index.ts',
     output: {
-      file: 'index.js',
+      // lib 目录
+      dir: 'lib',
       format: 'es',
-      sourcemap: false
+      sourcemap: false,
+      // 保持结构
+      preserveModules: true
     },
     plugins: [
       typescript({
         compilerOptions: {
           declaration: true,
-          declarationDir: 'types'
+          declarationDir: 'lib/types'
         }
-      })
+      }),
       // 开启代码压缩
-      // terser()
+      terser()
     ],
     onwarn: (warning, warn) => {
       // 忽略与无法解析the导入相关the警告信息

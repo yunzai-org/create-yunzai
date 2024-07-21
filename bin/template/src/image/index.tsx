@@ -33,7 +33,7 @@ export class ScreenshotPicture extends Picture {
       html_head: (
         <>
           <link href={require('../../public/output.css')} />
-          <link href={require('../assets/css/example.main.css')} />
+          <link href={require('../../assets/css/example.main.css')} />
         </>
       ),
       // <body> </body>

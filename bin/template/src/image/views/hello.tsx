@@ -21,7 +21,10 @@ const require = createRequire(import.meta.url)
 export default function App({ data, movies }: PropsType) {
   return (
     <section className="flex flex-col">
-      <BackgroundImage url={require('../../assets/exp.png')} size={'100% auto'}>
+      <BackgroundImage
+        url={require('../../../assets/exp.png')}
+        size={'100% auto'}
+      >
         <Nav>
           <NavItem href="./music">New {data.name}</NavItem>
         </Nav>
