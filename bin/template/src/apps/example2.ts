@@ -1,4 +1,5 @@
 import { Messages, Observer } from 'yunzai'
+// 群聊
 const message = new Messages('message.group')
 message.use(
   async e => {

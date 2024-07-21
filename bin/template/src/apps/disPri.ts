@@ -1,5 +1,6 @@
 import { ConfigController as cfg, Messages } from 'yunzai'
 const disablePrivate = 'Yz:disablePrivate:'
+// 私聊
 const message = new Messages('message.private')
 
 // 绑定ck，抽卡链接

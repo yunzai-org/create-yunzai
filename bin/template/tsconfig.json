@@ -1,4 +1,4 @@
 {
-  "include": ["src"],
+  "include": ["src", "routes.config.tsx"],
   "extends": "yunzai/tsconfig/tsconfig.json"
 }

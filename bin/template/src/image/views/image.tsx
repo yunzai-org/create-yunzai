@@ -1,2 +1,4 @@
 import React from 'react'
-export default ({} = {}) => <div className="show-image"></div>
+export default (_ = {}) => {
+  return <div className="show-image"></div>
+}

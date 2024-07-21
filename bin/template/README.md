@@ -2,7 +2,9 @@
 
 应用开发示例
 
-[说明文档 https://yunzai-org.github.io/docs/](https://yunzai-org.github.io/docs/)
+[Yunzai文档 https://yunzai-org.github.io/docs/](https://yunzai-org.github.io/docs/)
+
+[图片开发文档](https://github.com/lemonade-lab/react-puppeteer)
 
 ## 使用方法
 
@@ -38,4 +40,16 @@ npm login
 
 ```sh
 npm publish
+```
+
+## 注意
+
+> to a dynamic import() which is available in all CommonJS modules.
+
+- 重新拉依赖
+
+```sh
+rm -rf yarn.lock
+rm -rf node_modules
+yarn
 ```

@@ -33,11 +33,12 @@ export class ScreenshotPicture extends Picture {
       html_head: (
         <>
           <link href={require('../../public/output.css')} />
-          <link href={require('../../assets/css/example.main.css')} />
         </>
       ),
       // <body> </body>
       html_body: <Image {...Props} />,
+      // 别名资源
+      html_files: [require('../../assets/css/example.main.css')],
       // 设置别名
       file_paths: paths
     })

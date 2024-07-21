@@ -20,7 +20,8 @@ export default [
         compilerOptions: {
           declaration: true,
           declarationDir: 'lib/types'
-        }
+        },
+        include: ['src/**/*']
       }),
       // 开启代码压缩
       terser()
