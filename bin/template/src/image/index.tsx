@@ -2,7 +2,7 @@ import React from 'react'
 import { dirname } from 'path'
 import { Picture } from 'react-puppeteer'
 import Image from './views/image'
-import { createRequire } from 'module'
+import { createRequire } from 'react-puppeteer'
 const require = createRequire(import.meta.url)
 
 // 别名路径

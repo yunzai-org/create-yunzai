@@ -3,8 +3,7 @@ import Nav from '../component/Nav.tsx'
 import NavItem from '../component/NavItem.tsx'
 import List from '../component/List.tsx'
 import ListItem, { MovieType } from '../component/ListItem.tsx'
-import { createRequire } from 'module'
-import { BackgroundImage } from 'react-puppeteer'
+import { BackgroundImage, createRequire } from 'react-puppeteer'
 export type DataType = {
   name: string
 }

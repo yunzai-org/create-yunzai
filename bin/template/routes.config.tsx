@@ -1,6 +1,9 @@
 import React from 'react'
-import { createDynamicComponent, defineConfig } from 'react-puppeteer'
-import { createRequire } from 'module'
+import {
+  createDynamicComponent,
+  defineConfig,
+  createRequire
+} from 'react-puppeteer'
 const require = createRequire(import.meta.url)
 const dynamic = createDynamicComponent(import.meta.url)
 // router会被重复执行，此处组件变成动态组件
