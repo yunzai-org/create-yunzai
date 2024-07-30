@@ -29,19 +29,20 @@
     "tailwindcss": "^3.4.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.5.3",
-    "yunzai": "^1.0.1-rc.2",
+    "yunzai": "^1.0.1-rc.3",
     "yunzai-mys": "^1.0.0-rc.0"
   },
   "files": [
     "public",
+    "public/output.css",
     "assets",
     "lib"
   ],
-  "types": "lib/types",
+  "types": "lib",
   "exports": {
     ".": {
       "import": "./lib/index.js",
-      "types": "./lib/types/index.d.ts"
+      "types": "./lib/index.d.ts"
     }
   },
   "keywords": [
