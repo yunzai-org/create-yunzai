@@ -1,6 +1,6 @@
 {
   "name": "create-yunzai",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "yunzai",
   "author": "ningmengchongshui",
   "main": "bin/index.js",
@@ -19,10 +19,6 @@
     "typescript": "^5.2.2",
     "husky": "^9.0.11"
   },
-  "files": [
-    "bin/template",
-    "bin/yunzai.js"
-  ],
   "bin": {
     "create-yunzai": "bin/yunzai.js"
   },
