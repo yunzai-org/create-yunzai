@@ -1,2 +1,3 @@
-export * from './img'
-export * from './example2'
+export * from './img.group'
+export * from './img.private'
+export * from './observer.group'

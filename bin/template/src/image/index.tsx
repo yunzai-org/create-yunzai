@@ -1,16 +1,21 @@
 import React from 'react'
 import { dirname } from 'path'
-import { Picture } from 'react-puppeteer'
+import { type ComponentCreateOpsionType, Picture } from 'react-puppeteer'
 import Image from './views/image'
 import { createRequire } from 'react-puppeteer'
 const require = createRequire(import.meta.url)
-
-// 别名路径
-export const paths = {
-  // 定位自身的 md文件，并获取目录地址
-  '@yunzai': dirname(require('../../README.md'))
+export const DefineOptions: ComponentCreateOpsionType = {
+  file_paths: {
+    // 定位自身的 md文件，并获取目录地址
+    '@yunzai': dirname(require('../../README.md'))
+  },
+  // <head> </head>
+  html_head: (
+    <link rel="stylesheet" href={require('../../public/output.css')} />
+  ),
+  // <head> </head>
+  html_files: [require('../../assets/css/main.css')]
 }
-
 export class ScreenshotPicture extends Picture {
   constructor() {
     // 继承实例
@@ -29,18 +34,9 @@ export class ScreenshotPicture extends Picture {
       // html/help/help.html
       join_dir: 'help',
       html_name: `help.html`,
-      // <head> </head>
-      html_head: (
-        <>
-          <link href={require('../../public/output.css')} />
-        </>
-      ),
+      ...DefineOptions,
       // <body> </body>
-      html_body: <Image {...Props} />,
-      // 别名资源
-      html_files: [require('../../assets/css/example.main.css')],
-      // 设置别名
-      file_paths: paths
+      html_body: <Image {...Props} />
     })
   }
 }

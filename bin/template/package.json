@@ -8,17 +8,17 @@
   "scripts": {
     "app": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js",
     "dev": "npm run css && nodemon",
-    "img": "npm run css && nodemon --config routes.nodemon.json",
-    "build": "npm run css:m && rollup  --config rollup.config.js",
+    "img-dev": "npm run css && nodemon --config routes.nodemon.json",
+    "build": "npm run css-m && rollup  --config rollup.config.js",
     "css": "tailwindcss -i ./src/input.css -o ./public/output.css",
-    "css:m": "tailwindcss -i ./src/input.css -o ./public/output.css -m",
-    "css:watch": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "css-m": "tailwindcss -i ./src/input.css -o ./public/output.css -m",
+    "css-dev": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
     "format": "prettier --write ."
   },
   "dependencies": {
     "puppeteer": "^23.0.2",
     "react": "^18.3.1",
-    "react-puppeteer": "^1.0.1"
+    "react-puppeteer": "^1.0.2"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
@@ -34,12 +34,6 @@
     "yunzai": "^1.0.1-rc.5",
     "yunzai-mys": "^1.0.0-rc.1"
   },
-  "files": [
-    "public",
-    "public/output.css",
-    "assets",
-    "lib"
-  ],
   "types": "lib",
   "exports": {
     ".": {

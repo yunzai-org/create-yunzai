@@ -1,23 +1,29 @@
 import React from 'react'
-import {
-  createDynamicComponent,
-  defineConfig,
-  createRequire
-} from 'react-puppeteer'
-const require = createRequire(import.meta.url)
-const dynamic = createDynamicComponent(import.meta.url)
-// router会被重复执行，此处组件变成动态组件
-const Music = (await dynamic('./src/image/views/music.tsx')).default
+import { defineConfig } from 'react-puppeteer'
+import { DefineOptions } from './src/image/index.js'
+import Music from './src/image/views/music.js'
+import Image from './src/image/views/image.js'
+import Hello from './src/image/views/hello.js'
 export default defineConfig([
+  {
+    url: '/',
+    options: {
+      ...DefineOptions,
+      html_body: <Hello data={{ name: 'pages' }} movies={[]} />
+    }
+  },
   {
     url: '/music',
     options: {
-      html_body: <Music />,
-      html_head: (
-        <>
-          <link rel="stylesheet" href={require('./public/output.css')} />
-        </>
-      )
+      ...DefineOptions,
+      html_body: <Music />
+    }
+  },
+  {
+    url: '/image',
+    options: {
+      ...DefineOptions,
+      html_body: <Image />
     }
   }
 ])

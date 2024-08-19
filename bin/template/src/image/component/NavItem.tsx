@@ -1,4 +1,9 @@
 import React, { type ReactNode } from 'react'
+/**
+ *
+ * @param param0
+ * @returns
+ */
 export default function NavItem({
   href,
   children

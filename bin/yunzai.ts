@@ -16,6 +16,15 @@ const currentFilePath = fileURLToPath(import.meta.url)
 const currentDirPath = dirname(currentFilePath)
 const yunzaiCliPath = resolve(currentDirPath)
 
+const NpmPublish = `
+# 忽略所有文件
+/*   
+# 不忽略next
+!/assets
+!/lib
+!/public
+`
+
 const NpmrcBody = `# 为项目单独设置镜像
 registry=https://registry.npmmirror.com
 # canvas
@@ -78,6 +87,7 @@ async function createyunzai({ name, force, cancel }: options) {
 
     writeFileSync(join(dirPath, '.npmrc'), NpmrcBody)
     writeFileSync(join(dirPath, '.gitignore'), GitBody)
+    writeFileSync(join(dirPath, '.npmignore'), NpmPublish)
 
     // 切换目录
     process.chdir(dirPath)

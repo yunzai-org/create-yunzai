@@ -1,9 +1,9 @@
 import React from 'react'
+import { BackgroundImage, createRequire } from 'react-puppeteer'
 import Nav from '../component/Nav.tsx'
 import NavItem from '../component/NavItem.tsx'
 import List from '../component/List.tsx'
 import ListItem, { MovieType } from '../component/ListItem.tsx'
-import { BackgroundImage, createRequire } from 'react-puppeteer'
 export type DataType = {
   name: string
 }
@@ -21,10 +21,13 @@ export default function App({ data, movies }: PropsType) {
   return (
     <section className="flex flex-col">
       <BackgroundImage
-        url={require('../../../assets/exp.png')}
+        url={require('../../../assets/App-Store.png')}
         size={'100% auto'}
       >
         <Nav>
+          {
+            // 跳转到music
+          }
           <NavItem href="./music">New {data.name}</NavItem>
         </Nav>
         <List>

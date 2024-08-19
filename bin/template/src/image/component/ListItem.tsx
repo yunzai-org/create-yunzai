@@ -12,6 +12,11 @@ export interface MovieType {
   cast: string //  Simon Pegg, Zach Galifianakis
 }
 
+/**
+ *
+ * @param param0
+ * @returns
+ */
 export default function ListItem({ movie }: { movie: MovieType }) {
   return (
     <article className="flex items-start space-x-6 p-6">
