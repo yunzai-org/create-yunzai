@@ -1,5 +1,8 @@
 {
-  "exec": "node --no-warnings=ExperimentalWarning --loader ts-node/esm routes.server.ts",
+  "exec": "npm run img-app",
+  "verbose": true,
+  "delay": 1000,
+  "restartable": "rs",
   "watch": ["src/**/*"],
   "env": {
     "NODE_ENV": "development"

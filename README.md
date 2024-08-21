@@ -3,7 +3,8 @@
 安装
 
 ```shell
-npm init yunzai@latest -y
+npm create yunzai@latest -y
+npm create --registry=https://registry.npmmirror.com yunzai@latest -y
 ```
 
 进入机器目录
