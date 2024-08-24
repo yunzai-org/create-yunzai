@@ -1,14 +1,14 @@
 {
   "name": "yz-template",
   "version": "1.0.0-rc.0",
-  "description": "YunzaiJS插件",
+  "description": "Yunzai-Next APP",
   "author": "ningmengchongshui",
   "type": "module",
   "private": true,
   "scripts": {
-    "app": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js",
+    "app": "npx tsx ts-node/esm src/main.js",
     "dev": "nodemon --config nodemon.json",
-    "img-app": "npm run css && node --no-warnings=ExperimentalWarning --loader ts-node/esm routes.server.ts",
+    "img-app": "npm run css && npx tsx routes.server.ts",
     "img-dev": "nodemon --config routes.nodemon.json",
     "build": "npm run css-m && rollup  --config rollup.config.js",
     "css-app": "tailwindcss -i ./src/input.css -o ./public/output.css",
@@ -32,8 +32,8 @@
     "tailwindcss": "^3.4.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.5.3",
-    "yunzai": "^1.0.1-rc.6",
-    "yunzai-mys": "^1.0.0-rc.1"
+    "yunzai": "^1.0.6",
+    "yunzai-mys": "^1.0.2"
   },
   "types": "lib",
   "exports": {
