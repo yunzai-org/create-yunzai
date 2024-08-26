@@ -27,18 +27,10 @@ npm publish
 
 ## 图片开发
 
-需要启动两个进程
-
 - 浏览器
 
 ```sh
 yarn img-dev
-```
-
-- css解析
-
-```sh
-yarn css-dev
 ```
 
 ## 注意

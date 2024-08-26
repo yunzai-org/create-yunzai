@@ -6,10 +6,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "app": "npx tsx ts-node/esm src/main.js",
-    "dev": "nodemon --config nodemon.json",
-    "img-app": "npm run css && npx tsx routes.server.ts",
-    "img-dev": "nodemon --config routes.nodemon.json",
+    "app": "npx tsx src/main.ts",
+    "img-dev": "npx tsx watch --clear-screen=false routes.server.ts",
     "build": "npm run css-m && rollup  --config rollup.config.js",
     "css-app": "tailwindcss -i ./src/input.css -o ./public/output.css",
     "css-dev": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
@@ -17,23 +15,28 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "debug": "^4.3.6",
     "puppeteer": "^23.0.2",
     "react": "^18.3.1",
     "react-puppeteer": "^1.0.3"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-typescript": "^11.1.3",
     "@types/lodash": "^4.17.7",
     "@types/react": "^18.3.3",
-    "nodemon": "^3.0.1",
+    "babel-plugin-module-resolver": "^5.0.2",
     "prettier": "^3.2.5",
     "rollup": "^4.16.4",
     "tailwindcss": "^3.4.3",
-    "ts-node": "^10.9.1",
+    "tsx": "^4.18.0",
     "typescript": "^5.5.3",
     "yunzai": "^1.0.6",
-    "yunzai-mys": "^1.0.2"
+    "yunzai-mys": "^1.0.5"
   },
   "types": "lib",
   "exports": {

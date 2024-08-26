@@ -1,5 +1,5 @@
 import { Application, applicationOptions, useEvent } from 'yunzai'
-import * as apps from './apps/index'
+import * as apps from '@/apps/index.js'
 
 type RulesType = {
   reg: RegExp | string

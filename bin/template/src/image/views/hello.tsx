@@ -1,9 +1,9 @@
 import React from 'react'
 import { BackgroundImage, createRequire } from 'react-puppeteer'
-import Nav from '../component/Nav.tsx'
-import NavItem from '../component/NavItem.tsx'
-import List from '../component/List.tsx'
-import ListItem, { MovieType } from '../component/ListItem.tsx'
+import Nav from '@/image/component/Nav.tsx'
+import NavItem from '@/image/component/NavItem.tsx'
+import List from '@/image/component/List.tsx'
+import ListItem, { MovieType } from '@/image/component/ListItem.tsx'
 export type DataType = {
   name: string
 }
@@ -30,6 +30,7 @@ export default function App({ data, movies }: PropsType) {
           }
           <NavItem href="./music">New {data.name}</NavItem>
         </Nav>
+        <div>xxxxuu</div>
         <List>
           {movies.map(movie => (
             <ListItem key={movie.id} movie={movie} />

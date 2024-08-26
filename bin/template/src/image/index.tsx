@@ -1,7 +1,7 @@
 import React from 'react'
 import { dirname } from 'path'
 import { type ComponentCreateOpsionType, Picture } from 'react-puppeteer'
-import Image from './views/image'
+import Image from '@/image/views/image'
 import { createRequire } from 'react-puppeteer'
 const require = createRequire(import.meta.url)
 export const DefineOptions: ComponentCreateOpsionType = {
