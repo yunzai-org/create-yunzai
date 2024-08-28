@@ -7,7 +7,7 @@ const require = createRequire(import.meta.url)
 export const DefineOptions: ComponentCreateOpsionType = {
   file_paths: {
     // 定位自身的 md文件，并获取目录地址
-    '@yunzai': dirname(require('../../README.md'))
+    '@yunzai': dirname(require('../../README.md')) // 开发环境下 等同于 process.cwd()
   },
   // <head> </head>
   html_head: (

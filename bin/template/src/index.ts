@@ -1,14 +1,11 @@
 import { Application, applicationOptions, useEvent } from 'yunzai'
 import * as apps from '@/apps/index.js'
-
-type RulesType = {
-  reg: RegExp | string
-  key: string
-}[]
-
 export default () => {
   // 预先存储
-  const rules: RulesType = []
+  const rules: {
+    reg: RegExp | string
+    key: string
+  }[] = []
   // options
   return applicationOptions({
     create() {

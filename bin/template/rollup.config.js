@@ -9,11 +9,14 @@ export default defineConfig({
         '@babel/preset-react',
         '@babel/preset-typescript'
       ],
+      // 编译插件
       plugins: [
         [
           'module-resolver',
           {
+            // 根
             root: ['./'],
+            // @ 别名 -> 当前目录
             alias: {
               '@': './'
             }
@@ -23,10 +26,14 @@ export default defineConfig({
     }),
     typescript({
       compilerOptions: {
+        // 生产声明文件
         declaration: true,
+        // 输出目录
         declarationDir: 'lib',
+        // 输出目录
         outDir: 'lib'
       },
+      // 包含
       include: ['src/**/*']
     })
   ]

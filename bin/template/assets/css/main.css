@@ -2,7 +2,7 @@
   --bg-img: url('@yunzai/assets/App-Store.png')
 }
 
-#root[data-theme='new']{
+#root[data-theme='light']{
   --bg-img: url('@yunzai/assets/Google-Play.png')
 }
 
