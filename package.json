@@ -1,6 +1,6 @@
 {
   "name": "create-yunzai",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "yunzai",
   "author": "ningmengchongshui",
   "main": "bin/index.js",

@@ -1,40 +1,64 @@
-import { defineConfig } from 'yunzai/rollup'
+import { defineConfig } from 'rollup'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+// 处理ts文件
 import typescript from '@rollup/plugin-typescript'
-import babel from '@rollup/plugin-babel'
-export default defineConfig({
-  plugins: [
-    babel({
-      presets: [
-        '@babel/preset-env',
-        '@babel/preset-react',
-        '@babel/preset-typescript'
-      ],
-      // 编译插件
-      plugins: [
-        [
-          'module-resolver',
+// 处理别名
+import alias from '@rollup/plugin-alias'
+// 生产dts文件
+import dts from 'rollup-plugin-dts'
+export default defineConfig([
+  {
+    // 引入文件
+    input: './src/index.ts',
+    output: {
+      dir: 'lib',
+      format: 'es',
+      sourcemap: false,
+      preserveModules: true
+    },
+    plugins: [
+      // 处理
+      typescript({
+        compilerOptions: {
+          outDir: 'lib'
+        },
+        include: ['src/**/*']
+      })
+    ],
+    onwarn: (warning, warn) => {
+      if (warning.code === 'UNRESOLVED_IMPORT') return
+      warn(warning)
+    }
+  },
+  {
+    input: './src/index.ts',
+    output: {
+      dir: 'lib',
+      format: 'es',
+      sourcemap: false,
+      preserveModules: true
+    },
+    plugins: [
+      alias({
+        entries: [
           {
-            // 根
-            root: ['./'],
-            // @ 别名 -> 当前目录
-            alias: {
-              '@': './'
-            }
+            find: '@',
+            replacement: resolve(dirname(fileURLToPath(import.meta.url)), 'src')
           }
         ]
-      ]
-    }),
-    typescript({
-      compilerOptions: {
-        // 生产声明文件
-        declaration: true,
-        // 输出目录
-        declarationDir: 'lib',
-        // 输出目录
-        outDir: 'lib'
-      },
-      // 包含
-      include: ['src/**/*']
-    })
-  ]
-})
+      }),
+      typescript({
+        compilerOptions: {
+          outDir: 'lib'
+        },
+        include: ['src/**/*']
+      }),
+      dts()
+    ],
+    onwarn: (warning, warn) => {
+      if (warning.code === 'UNRESOLVED_IMPORT') return
+      warn(warning)
+    }
+  }
+])
